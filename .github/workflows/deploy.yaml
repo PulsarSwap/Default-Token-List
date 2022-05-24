@@ -34,15 +34,15 @@ jobs:
         id: upload
         uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.3
         with:
-          pin-name: Uniswap Default Token List
-          path: 'build/uniswap-default.tokenlist.json'
+          pin-name: Pulsar Default Token List
+          path: 'build/pulsar-default.tokenlist.json'
           pinata-api-key: ${{ secrets.PINATA_API_KEY }}
           pinata-secret-api-key: ${{ secrets.PINATA_API_SECRET_KEY }}
 
       - name: Update DNS with new IPFS hash
         env:
           CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
-          RECORD_DOMAIN: 'uniswap.org'
+          RECORD_DOMAIN: 'pulsarswap.com'
           RECORD_NAME: '_dnslink.tokens'
           CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
         uses: textileio/cloudflare-update-dnslink@0fe7b7a1ffc865db3a4da9773f0f987447ad5848

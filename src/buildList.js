@@ -10,7 +10,7 @@ const mumbai = require("./tokens/mumbai.json");
 module.exports = function buildList() {
   const parsed = version.split(".");
   return {
-    name: "Uniswap Labs List",
+    name: "Pulsar protocol List",
     timestamp: new Date().toISOString(),
     version: {
       major: +parsed[0],
@@ -18,9 +18,17 @@ module.exports = function buildList() {
       patch: +parsed[2],
     },
     tags: {},
-    logoURI: "ipfs://QmNa8mQkrNKp1WEEeGjFezDmDeodkWRevGFN8JCV7b4Xir",
-    keywords: ["uniswap", "default"],
-    tokens: [...mainnet, ...ropsten, ...goerli, ...kovan, ...rinkeby, ...polygon, ...mumbai]
+    logoURI: "ipfs://QmYV5Hnzsw3XX6bJJFBZ88nF7xREy1Uwk124UbwTLW49yA",
+    keywords: ["pulsar", "default"],
+    tokens: [
+      ...mainnet,
+      ...ropsten,
+      ...goerli,
+      ...kovan,
+      ...rinkeby,
+      ...polygon,
+      ...mumbai,
+    ]
       // sort them by symbol for easy readability
       .sort((t1, t2) => {
         if (t1.chainId === t2.chainId) {
